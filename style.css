@@ -118,3 +118,14 @@ font-size: 14px;
   border-radius: 50%;
   box-shadow: 4px 4px 0 #0008;
 }
+#time{
+  font-size: 16px;
+  color: white;
+  position:absolute;
+  bottom: 10px;
+  left: 96% ;
+  font-family: monospace;
+  background-color: #0008;
+  width: 60px;
+  text-align: center;
+}
