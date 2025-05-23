@@ -4,7 +4,7 @@ setTimeout(() => {
 }, 0);
 
 // Drag logic
-const windowIds = ["windowIntro", "windowIntro2", "window3"]; // Replace with your actual window IDs
+const windowIds = ["windowIntro", "windowIntro2", "window3", 'cmd']; // Replace with your actual window IDs
 
 windowIds.forEach(id => {
   const win = document.getElementById(id);
@@ -53,3 +53,53 @@ windowIds.forEach(id => {
     });
   }
 });
+
+
+const audioPlayer = new Audio("img/msc.mp3");
+let duration = 0;
+
+audioPlayer.addEventListener("loadedmetadata", () => {
+  duration = audioPlayer.duration; 
+  document.getElementById("range24").
+  audioPlayer.play();
+});
+
+audioPlayer.addEventListener("timeupdate", () => {
+  const currentTime = audioPlayer.currentTime;
+  const progress = (currentTime / duration) * 100;
+  document.getElementById("duration-label").textContent = `${duration.toFixed(6)/60}`;
+  document.getElementById("range23").value = progress;
+});
+
+document.getElementById("range23").addEventListener("input", (e) => {
+  const value = e.target.value;
+  audioPlayer.currentTime = (value);
+});
+
+audioPlayer.addEventListener("ended", () => {
+  console.log("Audio playback finished.");
+});
+
+// Optional: Pause and resume controls
+document.getElementById("pause-btn").addEventListener("click", () => {
+  audioPlayer.pause();
+});
+
+document.getElementById("play-btn").addEventListener("click", () => {
+  audioPlayer.play();
+});
+
+
+//cmd setup
+const cmdInput = document.getElementById("commandInput");
+document.getElementById("commandInput").addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    const command = cmdInput.value;
+    const output = document.getElementById("cmdwind");
+
+    output.innerHTML += `<p style="color: azure; margin: 1px;">${command}</p><br/>`;
+
+    cmdInput.value = ""; // Clear input
+  }
+});
+

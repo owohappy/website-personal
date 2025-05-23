@@ -20,7 +20,7 @@
   <div id="taskbar">
     <div id="start-button-cnt">
       <button class="start-button" style="width: 50px;">
-        <img src="img/wni98.png" width="50%" alt="Start" style="position: relative; top: 2px; left: -20px"></img>
+        <img src="img/wni98.png" width="50%" alt="Start" style="position: relative; top: 3px; left: -20px"></img>
         <div class="start-button-text" style="position: absolute; top: 12px; left: 40px">Start</div>
         </button>
     </div>
@@ -29,7 +29,7 @@
   </div>
 
 
-<div class="window" id="windowIntro" style="width: 300px; height: 215px; top: 100px; left: 100px;">
+<div class="window" id="windowIntro" style="width: 300px; height: 225px; top: 100px; left: 100px;">
   <div class="title-bar">
     <div class="title-bar-text">It's me</div>
     <div class="title-bar-controls">
@@ -41,40 +41,104 @@
         <img class="img-pfp" src="https://cdn.discordapp.com/avatars/1278647946094837802/75448cac99fb8a8ff802e1d8ae2db93f.webp" alt="My Image" width="20%" style="border: 10px;" />
         <div class="text-pfp"> Hi, I'm Lucy </div>
         <div class="text-desc"> I'm a young non-binary developer from Germany that loves to create new things. </div>
-        <br>
+        <br/>
         <div class="text-desc"> Check this out!</div>
-        <br>
-        <div class="buttons-intro"></div>
-          <button href="https://discord.gg/gjhhhnsR2a">Discord</button>
-          <button>Instagram</button>
-          <button>Github</button>
-        </div>
+        <br/>
     </p>
+    <div class="buttons-intro">
+        <button href="https://discord.gg/gjhhhnsR2a">Discord</button>
+        <button>Instagram</button>
+        <button>Github</button>
+    </div>
+  </div>
+</div>
 
-
-
-
-<div class="window" id="windowIntro2" style="width: 300px; height: 215px; top: 100px; left: 100px;">
+<div class="window" id="windowIntro2" style="width: 600px; height: 425px; top: 100px; left: 430px;">
   <div class="title-bar">
-    <div class="title-bar-text">It's me</div>
+    <div class="title-bar-text">a few projects</div>
     <div class="title-bar-controls">
       <button class="btn-close" aria-label="Close"></button>
     </div>
   </div>
   <div class="window-body">
-    <p>
-        <img class="img-pfp" src="https://cdn.discordapp.com/avatars/1278647946094837802/75448cac99fb8a8ff802e1d8ae2db93f.webp" alt="My Image" width="20%" style="border: 10px;" />
-        <div class="text-pfp"> Hi, I'm Lucy </div>
-        <div class="text-desc"> I'm a young non-binary developer from Germany that loves to create new things. </div>
-        <br>
-        <div class="text-desc"> Check this out!</div>
-        <br>
-        <div class="buttons-intro"></div>
-          <button href="https://discord.gg/gjhhhnsR2a">Discord</button>
-          <button>Instagram</button>
-          <button>Github</button>
-        </div>
-    </p>
+  <menu role="tablist">
+    <li role="tab" aria-selected="true"><a href="#tabs">traveltime</a></li>
+    <li role="tab"><a href="#tabs">edupay</a></li>
+  </menu>
+    <div class="window" role="tabpanel" style="width: 575px; height: 350px;">
+    <div class="window-body" >
+      <p> A new way of tracking your time on public transport:</p>
+<ul>
+    <li>Autologging</li>
+    <li>Gameified with leaderboards and minigames</li>
+    <li>All synced to an server</li>
+
+
+
+    </div>
+  </div>
+
+
+  </div>
+</div>
+
+
+
+<div class="window" id="window3" style="width: 300px; height: 225px; top: 400px; left: 100px;">
+  <div class="title-bar">
+    <div class="title-bar-text">music :3</div>
+    <div class="title-bar-controls">
+      <button class="btn-close" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+<img class="music-img" src="https://i.scdn.co/image/ab67616d0000b273d323f6132f7ea0a5bfe17c69" alt="https://i.scdn.co/image/ab67616d0000b273d323f6132f7ea0a5bfe17c69">
+<div class="music-text" style="position: absolute; top: 20px; left: 130px;">
+  <h3>eighteen - Nightcore</h3>
+  <p>PAYWALL</p>
+</div>
+<div class="field-row" style="width: 280px; top: 150px; position: absolute;">
+  <label id="current-time-label" for="range23">00:00</label>
+  <input id="range23" type="range" min="0" max="184" value="0" />
+  <label id="duration-label" for="range23">03:00</label>
+</div>
+<div class="controls" style="position: absolute; top: 180px; left: 75px;">
+  <button id="play-btn">Play</button>
+  <button id="pause-btn">Pause</button>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="window" id="cmd" style="width: 600px; height: 325px; top: 400px; left: 100px;">
+  <div class="title-bar">
+    <div class="title-bar-text">Command Line</div>
+    <div class="title-bar-controls">
+      <button class="btn-close" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+  <div class="cmd" id="cmdwind" style="position: absolute;width: 600px; height: 300px; top: 25px; left: 2px; background-color: black;">
+    <p style="color: azure; margin: 1px;">Megahard Bimbows 69 (Version 420.1337.0.1)</p>
+    <p style="color: azure; margin: 1px;">Copright 2007-2077 Megahard Corp.</p>
+    <br/>
+    <div id="input-line" style="display: flex; flex-shrink: 0; align-items: center;">
+           <p style="color: azure; margin: 1px;">C:\Users\Lucy\Desktop&gt; </p>
+        <input type="text" id="commandInput" style="background-color: transparent; color: azure; border: none; outline: none; flex-grow: 1;box-shadow:none; font-family: inherit; font-size: inherit; padding: 0;">
+    </div>
+
+  </div>
+
+
+</div>
+  </div>
+
+
+
+
+</div>
+
+
 
 
 
