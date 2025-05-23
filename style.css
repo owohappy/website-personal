@@ -34,7 +34,7 @@ body, html {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #222;
+  background: #c3c3c3;
   color: white;
   padding: 6px;
 }
@@ -92,4 +92,8 @@ body, html {
 .text-desc
 {
 font-size: 16px;
+}
+
+.buttons-intro {
+font-size: 14px;
 }

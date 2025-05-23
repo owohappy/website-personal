@@ -12,15 +12,24 @@
 </head>
 <body>
   <div id="boot-screen">Booting up...</div>
-
+  
+  
+  
   <div id="desktop">
 
-    <div class="window" style="width: 300px; height: 400px;">
+  <div id="taskbar">
+    <div id="start-button">
+      <button>Start</button>
+    </div>
+
+
+  </div>
+
+
+<div class="window" style="width: 300px; height: 215px; top: 100px; left: 100px;">
   <div class="title-bar">
     <div class="title-bar-text">It's me</div>
     <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
       <button class="btn-close" aria-label="Close"></button>
     </div>
   </div>
@@ -28,21 +37,32 @@
     <p>
         <img class="img-pfp" src="https://cdn.discordapp.com/avatars/1278647946094837802/75448cac99fb8a8ff802e1d8ae2db93f.webp" alt="My Image" width="20%" style="border: 10px;" />
         <div class="text-pfp"> Hi, I'm Lucy </div>
-        <div class="text-desc"> I'm a young Non-Binary developer from Germany that loves to create new things. </div>
+        <div class="text-desc"> I'm a young non-binary developer from Germany that loves to create new things. </div>
         <br>
         <div class="text-desc"> Check this out!</div>
-        <button>Discord</button>
-        <button>Instagram</button>
-        <button>C</button>
-
+        <br>
+        <div class="buttons-intro"></div>
+          <button>Discord</button>
+          <button>Instagram</button>
+          <button>Github</button>
+        </div>
     </p>
+  
+  
+<div class="window" style="width: 700px; height: 515px; top: 100px; left: 100px;">
+  <div class="title-bar">
+    <div class="title-bar-text">My past projects</div>
+    <div class="title-bar-controls">
+      <button class="btn-close" aria-label="Close"></button>
+    </div>
   </div>
+<div class="window-body">
+
+
+  
+</div>
 </div>
 
-
-
-
-  </div>
 
   <script src="script.js"></script>
 </body>
