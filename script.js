@@ -1,5 +1,6 @@
 // Simple boot screen
 setTimeout(() => {
+  document.getElementById("bsod").style.display = "none";
   document.getElementById("boot-screen").style.display = "none";
 }, 0);
 
@@ -143,3 +144,24 @@ document.getElementById("commandInput").addEventListener('keydown', function (ev
   }
 });
 
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiPosition = 0;
+
+document.addEventListener('keydown', function (event) {
+  if (document.activeElement === document.getElementById("commandInput")) {
+    return;
+  }
+  
+  const key = event.key;
+  const requiredKey = konamiCode[konamiPosition];
+  
+  if (key.toLowerCase() === requiredKey.toLowerCase()) {
+    konamiPosition++;
+    
+    if (konamiPosition === konamiCode.length) {
+      document.getElementById("bsod").style.display = 'block';
+    }
+  } else {
+    konamiPosition = 0; // Reset if wrong key pressed
+  }
+});

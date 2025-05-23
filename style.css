@@ -17,6 +17,13 @@ body, html {
   font-size: 24px;
   z-index: 1000;
 }
+#bsod{
+  font-family: monospace;
+  position: fixed;
+  inset: 0;
+  background: #0000ff;
+  z-index: 1000;
+}
 
 /* Desktop */
 #desktop {
