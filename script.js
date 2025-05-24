@@ -100,49 +100,41 @@ document.getElementById("commandInput").addEventListener('keydown', function (ev
   if (event.key === 'Enter') {
     const command = cmdInput.value;
     const output = document.getElementById("cmdwind");
-
-    if (command === "cls") {
-      output.innerHTML = "";
-      return;
-    }
-    if (command === "help") {
-      output.innerHTML += `<p style="color: azure; margin: 1px;">Available commands: cls, help</p>`;
-      command == 'Available commands: cls, help';
-    }
-    if (command === "exit") {
-      document.getElementById("cmd").style.display = "none";
-      return;
-    }
-    if (command === "owo") {
-      output.innerHTML += `<p style="color: azure; margin: 1px;">OwO what\'s this? UwU</p>`;  
-      command == 'OwO what\'s this? UwU';
-    }
-    if (command === "neofetch") {
-      output.innerHTML += `<div style="font-family: monospace; line-height: 1.2;">
-      <span style="color: #00ff99; font-weight: bold;">lucy@bimbows</span>
-      <span style="color: white;">-----------------</span>
-      <div><span style="color: #00ff99; font-weight: bold;">OS:</span> <span style="color: azure;">Bimbows 69</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">Host:</span> <span style="color: azure;">Personal-PC</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">Kernel:</span> <span style="color: azure;">420.69.1337.0.1</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">Uptime:</span> <span style="color: azure;">1 day, 2 hours</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">Packages:</span> <span style="color: azure;">1337 (uwu)</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">Shell:</span> <span style="color: azure;">bimsh 5.0</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">Resolution:</span> <span style="color: azure;">1920x1080</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">DE:</span> <span style="color: azure;">BimDE</span></div>
-      <div><span style="color: #00ff99; font-weight: bold;">Memory:</span> <span style="color: azure;">4.2GB / 69GB</span></div>
-      <div style="color: #ffccff; font-family: monospace;">${easterEggs[Math.floor(Math.random() * easterEggs.length)]}</div>
-      </div>`;
-    }
-
-
-    cmdInput.value = "";
-    output.innerHTML += `<p style="color: azure; margin: 1px;">C:\\Users\\Lucy\\Desktop> <input type="text" class="commandInput" style="background-color: transparent; color: azure; border: none; outline: none; flex-grow: 1;box-shadow:none; font-family: inherit; font-size: inherit; padding: 0;"></p>`;
-
-    const newInput = output.querySelector(".commandInput:last-of-type");
-    newInput.focus();
-    newInput.addEventListener('keydown', arguments.callee);
+    processCommand(command);
   }
 });
+
+function processCommand(command) {
+  const output = document.getElementById("cmdwind");
+  
+  if (command === "cls") {
+    output.innerHTML = "";
+    return;
+  }
+  if (command === "help") {
+    output.innerHTML += `<p style="color: azure; margin: 1px;">Available commands: cls, help</p>`;
+    return;
+  }
+  if (command === "exit") {
+    document.getElementById("cmd").style.display = "none";
+    return;
+  }
+  if (command === "owo") {
+    output.innerHTML += `<p style="color: azure; margin: 1px;">OwO what\'s this? UwU</p>`;
+    return;
+  }
+  //setup next input 
+  output.innerHTML += `<p style="color: azure; margin: 1px;">C:\\Users\\Lucy\\Desktop> <input type="text" class="commandInput" style="background-color: transparent; color: azure; border: none; outline: none; flex-grow: 1;box-shadow:none; font-family: inherit; font-size: inherit; padding: 0;"></p>`;
+  const newInput = output.querySelector(".commandInput:last-of-type");
+  newInput.focus();
+  newInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      const command = newInput.value;
+      processCommand(command);
+      newInput.remove(); // Remove the input after processing
+    }
+  })
+}
 
 const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 let konamiPosition = 0;
